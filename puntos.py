@@ -23,9 +23,26 @@ class Punto():
         else:
             return "Punto de origen"
     def vector(self,p2):
-        return "El vector es:" f'({self.x - p2.x},{self.y - p2.y})'
+        return "El vector es: " f'({abs(self.x - p2.x)},{abs(self.y - p2.y)})'
     def distancia(self,p2):
-        return "La dist es:" f'({sqrt()})'
+        return "La dist es: " f'({math.sqrt((abs(self.x - p2.x)**2) + abs(self.y - p2.y)**2)})'
+    
+def main():
+    A = Punto(2,3)
+    B = Punto(5,5)
+    C = Punto(-3,-1)
+    D = Punto(0,0)
+    print(A)
+    print(B)
+    print(A.coordenada())
+    print(C.coordenada())
+    print(D.coordenada())
+    print(A.vector(B))
+    print(B.vector(A))
+    print(A.distancia(B))
+    print(B.distancia(A))
+if __name__ == "__main__":
+    main()
         
     
         
