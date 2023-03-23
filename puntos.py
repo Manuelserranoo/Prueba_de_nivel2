@@ -31,7 +31,11 @@ class Rectangulo(Punto):
         self.p1 = p1
         self.p2 = p2
     def base(self):
-        return "La base es igual a: " f'({self.p1.x - self.p2.x})' 
+        return "La base es igual a: " f'{abs(self.p1.x - self.p2.x)}' 
+    def altura(self):
+        return "La altura es igual a:" f'{abs(self.p1.y - self.p2.y)}'
+    def area(self):
+        return "El area es igual a:" f'{(self.p1.x - self.p2.x) * (self.p1.y - self.p2.y)}'
 def main():
     A = Punto(2,3)
     B = Punto(5,5)
@@ -52,8 +56,10 @@ def main():
         print("B es el más cercano a D")
     else:
         return ("C es el más cercano a D")
-    rectangulo = Rectangulo(B,C)
+    rectangulo = Rectangulo(B,A)
     print(rectangulo.base())
+    print(rectangulo.altura())
+    print(rectangulo.area())
 if __name__ == "__main__":
     main()
         
