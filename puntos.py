@@ -5,8 +5,6 @@ class Punto():
         self.y = y
     def __str__(self):
         return f'({self.x}, {self.y})'
-    def sum(self):
-        return self.x + self.y
     def coordenada(self):
         if self.x > 0 and self.y > 0:
             return "Primer cuadrante"
@@ -36,6 +34,8 @@ class Rectangulo(Punto):
         return "La altura es igual a:" f'{abs(self.p1.y - self.p2.y)}'
     def area(self):
         return "El area es igual a:" f'{(self.p1.x - self.p2.x) * (self.p1.y - self.p2.y)}'
+    def rectangulo(self):
+        return "las coordenadas del rectángulo que faltan son: C" f'{self.p1.x}'
 def main():
     A = Punto(2,3)
     B = Punto(5,5)
@@ -56,10 +56,11 @@ def main():
         print("B es el más cercano a D")
     else:
         return ("C es el más cercano a D")
-    rectangulo = Rectangulo(B,A)
+    rectangulo = Rectangulo(A,B)
     print(rectangulo.base())
     print(rectangulo.altura())
     print(rectangulo.area())
+    print(rectangulo.rectangulo())
 if __name__ == "__main__":
     main()
         
